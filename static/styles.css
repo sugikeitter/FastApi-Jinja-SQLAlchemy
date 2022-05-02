@@ -64,3 +64,7 @@
 	background-color:#03638b;
 	border:1px solid #2ba6b6;
 }
+
+.errorMsg {
+	color: red;
+}

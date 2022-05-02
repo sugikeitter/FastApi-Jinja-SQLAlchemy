@@ -8,7 +8,7 @@ amazon-linux-extras install postgresql12
 
 # Pythonの依存パッケージ
 python3 -m pip install pip --upgrade    
-python3 -m pip install fastapi uvicorn boto3 Jinja2 sqlalchemy psycopg2-binary
+python3 -m pip install fastapi uvicorn boto3 Jinja2 sqlalchemy psycopg2-binary python-multipart
 
 # 起動
 uvicorn main:app --host 0.0.0.0

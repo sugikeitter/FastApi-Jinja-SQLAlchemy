@@ -43,7 +43,20 @@ async def index(request: Request, db: Session = Depends(get_rdb_session)):
 @app.post("/", response_class=HTMLResponse)
 async def post(request: Request,
                db: Session = Depends(get_rdb_session),
-               title: str = Form(...)):
+               title: str = Form("")):
+    if title is None or title == "":
+        books = rdb_crud.get_books(db)
+        timestamp = datetime.now(JST).isoformat()[0:23]  # 日本時間のミリ秒3桁までの文字列
+        return templates.TemplateResponse(
+            "index.html",
+            {
+                "request": request,
+                "error_msg": "タイトルを入力してね 📝",
+                "timestamp": timestamp,
+                "books": books,
+            }
+        )
+
     rdb_crud.insert_books(db, title)
     books = rdb_crud.get_books(db)
     timestamp = datetime.now(JST).isoformat()[0:23]  # 日本時間のミリ秒3桁までの文字列
