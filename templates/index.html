@@ -5,8 +5,10 @@
   <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
 </head>
 <body>
+  <div class="accessTime">アクセスした時刻: {{ timestamp }}</div>
+  <div class="instanceInfo">AZ: {{ aws_az }}, Private IP: {{ private_ip }}</div>
   <h1>My Books</h1>
-  <div class="top">アクセスした時刻: {{ timestamp }}</div>
+  <div class="topMsg">📚 読んだ本を登録しよう 📚</div>
   <div class="errorMsg">{{ error_msg }}</div>
   <form action="/" method="POST">
     <div class="post">

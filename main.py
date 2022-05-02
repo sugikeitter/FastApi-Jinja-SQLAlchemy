@@ -34,6 +34,8 @@ async def index(request: Request, db: Session = Depends(get_rdb_session)):
         "index.html",
         {
             "request": request,
+            "aws_az": const.AWS_AZ,
+            "private_ip": const.PRIVATE_IP,
             "timestamp": timestamp,
             "books": books,
         }
@@ -51,6 +53,8 @@ async def post(request: Request,
             "index.html",
             {
                 "request": request,
+                "aws_az": const.AWS_AZ,
+                "private_ip": const.PRIVATE_IP,
                 "error_msg": "タイトルを入力してね 📝",
                 "timestamp": timestamp,
                 "books": books,
@@ -66,6 +70,8 @@ async def post(request: Request,
         {
             "request": request,
             "timestamp": timestamp,
+            "aws_az": const.AWS_AZ,
+            "private_ip": const.PRIVATE_IP,
             "books": books,
         }
     )
