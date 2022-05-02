@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from fastapi import Depends, FastAPI, Form, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
@@ -62,19 +62,9 @@ async def post(request: Request,
         )
 
     rdb_crud.insert_books(db, title)
-    books = rdb_crud.get_books(db)
-    timestamp = datetime.now(const.JST).isoformat()[0:23]  # 日本時間のミリ秒3桁までの文字列
+    # INSERTが成功したらトップへリダイレクト、status_codeなしだとpostリクエストのループになる
+    return RedirectResponse("/", status_code=302)
 
-    return templates.TemplateResponse(
-        "index.html",
-        {
-            "request": request,
-            "timestamp": timestamp,
-            "aws_az": const.AWS_AZ,
-            "private_ip": const.PRIVATE_IP,
-            "books": books,
-        }
-    )
 
 @app.get("/hello/{name}")
 async def say_hello(name: str):
