@@ -6,11 +6,11 @@
 </head>
 <body>
   <h1>My Books</h1>
-  <div>アクセスした時刻: {{ timestamp }}</div>
+  <div class="top">アクセスした時刻: {{ timestamp }}</div>
   <form action="/" method="POST">
     <div class="post">
       <div class="inputTxt">
-        <input id="name" type="text" name="name" placeholder="Name" maxlength="30">
+        <input id="title" type="text" name="title" placeholder="Book Title" maxlength="40">
       </div>
       <div class="submitButton">
         <input type="submit" value="登録" class="sendButton">
@@ -20,7 +20,7 @@
 
   <table class="styled-table">
   <tr>
-    <th>ID</th><th>名前</th><th>登録日時</th>
+    <th>ID</th><th>タイトル</th><th>登録日時</th>
   </tr>
   {% for b in books %}
     <tr>

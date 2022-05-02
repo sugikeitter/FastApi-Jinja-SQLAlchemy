@@ -13,3 +13,29 @@ python3 -m pip install fastapi uvicorn boto3 Jinja2 sqlalchemy psycopg2-binary
 # 起動
 uvicorn main:app --host 0.0.0.0
 ```
+
+
+```sql
+CREATE TABLE books (
+    book_id SERIAL PRIMARY KEY,
+    title VARCHAR ( 100 ) NOT NULL,
+    created_on TIMESTAMP NOT NULL,
+    updated_on TIMESTAMP NOT NULL
+    );
+
+INSERT INTO books (
+    title,
+    created_on,
+    updated_on
+)
+VALUES (
+    'モブプログラミング・ベストプラクティス ソフトウェアの品質と生産性をチームで高める',
+    current_timestamp,
+    current_timestamp
+),
+(
+    'リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック',
+    current_timestamp,
+    current_timestamp
+);
+```
