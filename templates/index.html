@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>My Webpage</title>
+  <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+<h1>My Webpage</h1>
+アクセスした時刻: {{ timestamp }}
+<form action="/" method="POST">
+  <div class="post">
+    <div class="inputTxt">
+      <input id="name" type="text" name="name" placeholder="Name" maxlength="30">
+    </div>
+    <div class="submitButton">
+      <input type="submit" value="登録" class="sendButton">
+    </div>
+  </div>
+</form>
+
+<ul id="books">
+  {% for b in books %}
+    <li>{{ b.title }}</li>
+  {% endfor %}
+</ul>
+
+{# a comment #}
+</body>
+</html>
