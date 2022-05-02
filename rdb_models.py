@@ -18,6 +18,6 @@ class Books(Base):
     book_id = Column(Integer, primary_key=True, index=True)
     title = Column(String)
     created_on = Column(String)
-    updated_on = Column(Integer)
+    updated_on = Column(String)
 
 

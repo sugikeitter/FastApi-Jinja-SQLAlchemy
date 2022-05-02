@@ -2,9 +2,10 @@
 # 環境設定+Python+FastAPI,boto3インストール
 yum update -y
 # PostgreSQLを利用する場合は'postgresql gcc python3-devel postgresql-devel'も必要
-yum install git python3 postgresql gcc python3-devel postgresql-devel -y
+yum install git gcc -y
 ### Amazon Linux 2
-amazon-linux-extras install postgresql12
+amazon-linux-extras install python3.8 postgresql12 -y
+sudo ln -fs /usr/bin/python3.8 /usr/bin/python3
 
 # Pythonの依存パッケージ
 python3 -m pip install pip --upgrade    
