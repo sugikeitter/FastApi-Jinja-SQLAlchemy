@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <title>My Webpage</title>
+  <title>My Books</title>
   <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
 </head>
 <body>
   <div class="accessTime">アクセスした時刻: {{ timestamp }}</div>
 
-  <div class="ribbon20-wrapper">
-    <h3 class="ribbon20">{{ aws_az }}</h3>
+  <div class="title-wrapper">
+    <h3 class="ribbonUpper">{{ aws_az }}</h3>
     <h2>My Books</h2>
-    <h3 class="ribbon21">{{ private_ip }}</h3>
+    <h3 class="ribbonUnder">{{ private_ip }}</h3>
   </div>
-  <div class="topMsg">📚 読んだ本を登録しよう 📚</div>
   <div class="errorMsg">{{ error_msg }}</div>
   <form action="/" method="POST">
     <div class="post">
       <div class="inputTxt">
-        <input id="title" type="text" name="title" placeholder="Book Title" maxlength="40">
+        <input id="title" type="text" name="title" placeholder="📚 読んだ本を登録しよう 📚" maxlength="40">
       </div>
       <div class="submitButton">
         <input type="submit" value="登録" class="sendButton">

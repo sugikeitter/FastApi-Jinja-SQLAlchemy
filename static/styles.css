@@ -37,7 +37,7 @@
 /* インプットデザイン */
 .post{
 	position:relative;
-  width:400px;
+    width:400px;
 }
 .post .inputTxt{
 	margin-right:105px;
@@ -69,92 +69,93 @@
 }
 
 /* タイトル */
-.ribbon20-wrapper {
-  display: block;
-  position: relative;
-  margin: 10px;
-  padding: 20px 0;
-  width: 300px;
-  background: #f1f1f1;
-  }
-.ribbon20-wrapper h2 {
-  text-align:center;
+.title-wrapper {
+    display: block;
+    position: relative;
+    margin: 30px;
+    padding: 20px 0;
+    width: 300px;
+    background: #f1f1f1;
 }
-.ribbon20 {
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  top: 5px;
-  box-sizing: border-box;
-  padding: 0 12px;
-  margin: 0;
-  height: 25px;
-  line-height: 25px;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  color: white;
-  background: #2ba6b6;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
+.ribbonUpper-wrapper h2 {
+    text-align:center;
+    color: #035b7e;
 }
-.ribbon20:before {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: -7px;
-  border: none;
-  height: 33px;
-  width: 7px;
-  background: #2ba6b6;
-  border-radius: 5px 0 0 5px;
+.ribbonUpper {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    margin: 0;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: white;
+    background: #2ba6b6;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
 }
-.ribbon20:after {
-  position: absolute;
-  content: '';
-  bottom: -7px;
-  left: -5px;
-  border: none;
-  height: 7px;
-  width: 5px;
-  background: #0d6775;
-  border-radius: 5px 0 0 5px;
+.ribbonUpper:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -7px;
+    border: none;
+    height: 33px;
+    width: 7px;
+    background: #2ba6b6;
+    border-radius: 5px 0 0 5px;
 }
-.ribbon21 {
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  bottom: 5px;
-  box-sizing: border-box;
-  padding: 0 10px;
-  margin: 0;
-  height: 25px;
-  line-height: 25px;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  color: white;
-  background: #f49720;
-  box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.1);
+.ribbonUpper:after {
+    position: absolute;
+    content: '';
+    bottom: -7px;
+    left: -5px;
+    border: none;
+    height: 7px;
+    width: 5px;
+    background: #0d6775;
+    border-radius: 5px 0 0 5px;
 }
-.ribbon21:before {
-  position: absolute;
-  content: '';
-  top: -8px;
-  right: -7px;
-  border: none;
-  height: 33px;
-  width: 7px;
-  background: #f49720;
-  border-radius: 0 5px 5px 0;
+.ribbonUnder {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin: 0;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: white;
+    background: #f49720;
+    box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.1);
 }
-.ribbon21:after {
-  position: absolute;
-  content: '';
-  top: -7px;
-  right: -5px;
-  border: none;
-  height: 7px;
-  width: 5px;
-  background: #be7516;
-  border-radius: 0 5px 5px 0;
+.ribbonUnder:before {
+    position: absolute;
+    content: '';
+    top: -8px;
+    right: -7px;
+    border: none;
+    height: 33px;
+    width: 7px;
+    background: #f49720;
+    border-radius: 0 5px 5px 0;
+}
+.ribbonUnder:after {
+    position: absolute;
+    content: '';
+    top: -7px;
+    right: -5px;
+    border: none;
+    height: 7px;
+    width: 5px;
+    background: #be7516;
+    border-radius: 0 5px 5px 0;
 }
 
 /* メッセージ */
