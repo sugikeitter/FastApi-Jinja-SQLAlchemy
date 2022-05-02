@@ -5,13 +5,15 @@ yum update -y
 yum install git gcc -y
 ### Amazon Linux 2
 amazon-linux-extras install python3.8 postgresql12 -y
-sudo ln -fs /usr/bin/python3.8 /usr/bin/python3
+ln -fs /usr/bin/python3.8 /usr/bin/python3
 
 # Pythonの依存パッケージ
 python3 -m pip install pip --upgrade    
-python3 -m pip install fastapi uvicorn boto3 Jinja2 sqlalchemy psycopg2-binary python-multipart
+python3 -m pip install wheel fastapi uvicorn[standard] boto3 Jinja2 sqlalchemy psycopg2-binary python-multipart
 
 # 起動
+python3 -m uvicorn main:app --host 0.0.0.0
+# パスが通っていればこちらでも
 uvicorn main:app --host 0.0.0.0
 ```
 

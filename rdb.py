@@ -1,10 +1,15 @@
+import json
+import os
+
+import boto3
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-import boto3
+import const
 
-ssm = boto3.client('ssm')
+ssm = boto3.client('ssm', region_name=const.AWS_REGION)
+secmgr = boto3.client('secretsmanager', region_name=const.AWS_REGION)
 
 
 def get_rdb_url_and_pass():
@@ -14,6 +19,17 @@ def get_rdb_url_and_pass():
     )
     for parameter in response['Parameters']:
         return parameter['Value']
+
+
+def get_rdb_url_and_pass_from_secmgr():
+    secrets_value = secmgr.get_secret_value(SecretId=os.getenv('RDS_SECRET_ID', ''))
+    secstr_dict = json.loads(secrets_value.get('SecretString', '{}'))
+    return "postgresql://{username}:{password}@{host}/{dbname}".format(
+        username=secstr_dict.get('username'),
+        password=secstr_dict.get('password'),
+        host=secstr_dict.get('host'),
+        dbname=secstr_dict.get('username'),
+    )
 
 
 def get_rdb_url_and_pass_read():
@@ -26,7 +42,7 @@ def get_rdb_url_and_pass_read():
 
 
 # ex) "postgresql://postgres:XXX@sandbox-aurora-postgres-02.cluster-c1glrtlijepc.ap-northeast-1.rds.amazonaws.com/sandbox"
-SQLALCHEMY_DATABASE_URL = get_rdb_url_and_pass()
+SQLALCHEMY_DATABASE_URL = get_rdb_url_and_pass_from_secmgr()
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={}
 )
