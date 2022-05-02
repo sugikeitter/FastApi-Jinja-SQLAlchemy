@@ -6,8 +6,12 @@
 </head>
 <body>
   <div class="accessTime">アクセスした時刻: {{ timestamp }}</div>
-  <div class="instanceInfo">AZ: {{ aws_az }}, Private IP: {{ private_ip }}</div>
-  <h1>My Books</h1>
+
+  <div class="ribbon20-wrapper">
+    <h3 class="ribbon20">{{ aws_az }}</h3>
+    <h2>My Books</h2>
+    <h3 class="ribbon21">{{ private_ip }}</h3>
+  </div>
   <div class="topMsg">📚 読んだ本を登録しよう 📚</div>
   <div class="errorMsg">{{ error_msg }}</div>
   <form action="/" method="POST">

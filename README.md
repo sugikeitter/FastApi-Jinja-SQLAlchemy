@@ -13,6 +13,10 @@ python3 -m pip install wheel fastapi uvicorn[standard] boto3 Jinja2 sqlalchemy p
 
 # 起動
 RDS_SECRET_ID='YOUR_PARAM' python3 -m uvicorn main:app --host 0.0.0.0
+
+# バックグラウンド起動+ログ
+mkdir ~/log/
+RDS_SECRET_ID='YOUR_PARAM' nohup python3 -m uvicorn main:app --host 0.0.0.0 > ~/log/fastapi.log &
 # パスが通っていればこちらでも
 uvicorn main:app --host 0.0.0.0
 ```
