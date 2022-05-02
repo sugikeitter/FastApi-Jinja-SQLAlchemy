@@ -35,10 +35,7 @@ async def root(request: Request, db: Session = Depends(get_rdb_session)):
         {
             "request": request,
             "timestamp": timestamp,
-            "books": [
-                {"title": "ABC"},
-                {"title": "EFG"}
-            ]
+            "books": books,
         }
     )
 

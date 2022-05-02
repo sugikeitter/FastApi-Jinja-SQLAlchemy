@@ -6,7 +6,7 @@ from rdb import Base
 
 class Books(Base):
     """
-    CREATE TABLE certifications (
+    CREATE TABLE books (
         book_id VARCHAR ( 50 ) PRIMARY KEY,
         title VARCHAR ( 100 ) NOT NULL,
         created_on TIMESTAMP NOT NULL,
