@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
   <title>My Books</title>
-  <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+<!--   <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet"> ALB(https)=>Target(http)の場合、cssのURLがhttpのままとなりブラウザで読み込みエラーになる-->
+  <link href="./static/styles.css" rel="stylesheet">
 </head>
 <body>
   <div class="accessTime">アクセスした時刻: {{ timestamp }}</div>
