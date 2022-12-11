@@ -26,6 +26,11 @@ def get_rdb_session():
         db.close()
 
 
+@app.get("/health")
+async def health():
+    return {'status': 'OK'}
+
+
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request, db: Session = Depends(get_rdb_session)):
     books = rdb_crud.get_books(db)
