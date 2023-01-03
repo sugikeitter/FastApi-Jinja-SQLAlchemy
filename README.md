@@ -88,3 +88,20 @@ EOF
 
 systemctl start fastapi
 ```
+
+```bash
+# ログローテートの設定
+cat <<EOL >> /home/ec2-user/loglotate.conf
+/home/ec2-user/rest_app.log # Change your path
+{
+  missingok
+  rotate 7
+  dateext
+  dateformat _%Y%m%d
+  0644 root root
+  daily
+}
+EOL
+
+mv /home/ec2-user/loglotate.conf /etc/logrotate.d/app
+```
