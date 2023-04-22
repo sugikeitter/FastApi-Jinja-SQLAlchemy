@@ -1,9 +1,7 @@
 from sqlalchemy.orm import Session
 
-import const
-import rdb_crud
 import rdb_models as models
-from rdb import SessionLocal, engine
+from rdb import engine
 
 
 if __name__ == '__main__':
