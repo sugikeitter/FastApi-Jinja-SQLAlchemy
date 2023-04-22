@@ -105,3 +105,12 @@ EOL
 
 mv /home/ec2-user/loglotate.conf /etc/logrotate.d/app
 ```
+
+## 削除
+```bash
+# 全行の削除 (インクリメントの値は引き継がれる)
+sudo -u ec2-user RDS_SECRET_ID='$YOUR_PARAM' python3 /home/ec2-user/FastApi-Jinja-SQLAlchemy/delete_all_books.py
+
+# テーブル削除 & プロセス再起動
+sudo -u ec2-user RDS_SECRET_ID='$YOUR_PARAM' python3 /home/ec2-user/FastApi-Jinja-SQLAlchemy/drop_books_table.py && sudo systemctl restart fastapi
+```
